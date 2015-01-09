@@ -1,0 +1,13 @@
+{
+  "name": "gulp-rest-emulator-example",
+  "version": "0.0.1",
+  "description": "Example project for gulp-rest-emulator",
+  "main": "gulpfile.js",
+  "scripts": {
+    "run": "gulp run"
+  },
+  "author": "temrdm",
+  "dependencies": {
+    "gulp": "^3.8.10"
+  }
+}

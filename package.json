@@ -1,0 +1,32 @@
+{
+  "name": "gulp-rest-emulator",
+  "version": "0.0.1",
+  "description": "Gulp plugin use Rest Emulator",
+  "main": "index.js",
+  "scripts": {
+    "test": "gulp test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/temrdm/gulp-rest-emulator.git"
+  },
+  "keywords": [
+    "rest-emulator",
+    "gulp"
+  ],
+  "author": "Artem Pogrebnoy <tem.rdm@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/temrdm/gulp-rest-emulator/issues"
+  },
+  "homepage": "https://github.com/temrdm/gulp-rest-emulator",
+  "dependencies": {
+    "event-stream": "^3.2.1",
+    "express": "^4.10.7",
+    "gulp-util": "^3.0.2",
+    "lodash": "^2.4.1",
+    "rest-emulator": "0.0.2",
+    "serve-index": "^1.6.0",
+    "serve-static": "^1.8.0"
+  }
+}
