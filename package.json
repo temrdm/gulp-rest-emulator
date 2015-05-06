@@ -21,6 +21,7 @@
   },
   "homepage": "https://github.com/temrdm/gulp-rest-emulator",
   "dependencies": {
+    "cors": "^2.6.0",
     "event-stream": "^3.2.1",
     "express": "^4.10.7",
     "gulp-util": "^3.0.2",

@@ -5,7 +5,8 @@ var restEmulator = require('../');
 
 gulp.task('run', function () {
     var options = {
-        rewriteNotFound: true
+        rewriteNotFound: true,
+        corsEnable: true
     };
     return gulp.src('./mocks/**/*.js')
         .pipe(restEmulator(options));

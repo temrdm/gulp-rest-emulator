@@ -5,6 +5,7 @@ var gutil = require('gulp-util');
 var _ = require('lodash');
 var serveStatic = require('serve-static');
 var path = require('path');
+var cors = require('cors');
 
 exports = module.exports = gulpRestEmulator;
 
@@ -28,6 +29,10 @@ function gulpRestEmulator(options) {
 
     function end() {
         var stream = this;
+
+        if (options.corsEnable) {
+            app.use(cors(options.corsOptions));
+        }
 
         app.use(restEmulator(config));
 
@@ -56,7 +61,9 @@ function getNormalizeOptions(options) {
         port: 8000,
         root: ['./'],
         rewriteNotFound: false,
-        rewriteTemplate: 'index.html'
+        rewriteTemplate: 'index.html',
+        corsEnable: false,
+        corsOptions: {}
     };
 
     if (!_.isPlainObject(options)) {

@@ -23,7 +23,9 @@ gulp-rest-emulator
             port: 8000,
             root: ['./'],
             rewriteNotFound: false,
-            rewriteTemplate: 'index.html'
+            rewriteTemplate: 'index.html',
+            corsEnable: false, // Set true to enable CORS
+            corsOptions: {} // CORS options https://github.com/troygoode/node-cors#configuration-options
         };
         return gulp.src('./mocks/**/*.js')
             .pipe(restEmulator(options));
