@@ -31,7 +31,7 @@ gulp-rest-emulator
             .pipe(restEmulator(options));
     });
 
-[CORS options avaliable here.](https://github.com/troygoode/node-cors#configuration-options)
+[CORS options available here.](https://github.com/troygoode/node-cors#configuration-options)
 
 # Mock
 
