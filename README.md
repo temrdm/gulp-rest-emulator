@@ -25,11 +25,13 @@ gulp-rest-emulator
             rewriteNotFound: false,
             rewriteTemplate: 'index.html',
             corsEnable: false, // Set true to enable CORS
-            corsOptions: {} // CORS options https://github.com/troygoode/node-cors#configuration-options
+            corsOptions: {} // CORS options, default all origins
         };
         return gulp.src('./mocks/**/*.js')
             .pipe(restEmulator(options));
     });
+
+[CORS options avaliable here.](https://github.com/troygoode/node-cors#configuration-options)
 
 # Mock
 
