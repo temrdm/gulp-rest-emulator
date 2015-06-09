@@ -139,4 +139,35 @@ module.exports = {
         }
     }
 };
+
+```
+
+### Query params
+
+```
+module.exports = {
+    '/api/users': {
+        GET: {
+            data: [
+                { name: 'John' },
+                { name: 'Adam' }
+            ],
+            query: {
+                // Usage: /api/users/?name=Adam
+                'name=Adam': {
+                    data: [
+                        { name: 'Adam' }
+                    ]
+                },
+                // Usage: /api/users/?name='John Doe'
+                'name=John Doe': {
+                    data: [
+                        { name: 'John Doe' }
+                    ]
+                }
+            },
+            timeout: 100
+        }
+    }
+};
 ```
