@@ -57,7 +57,9 @@ module.exports = {
         data: [
             { name: 'John' },
             { name: 'Adam' }
-        ]
+        ],
+        code: 200, // Default value
+        timeout: 0 // Default value in ms
     },
     '/api/cities': {
         data: [
@@ -77,7 +79,8 @@ module.exports = {
             data: [
                 { name: 'John' },
                 { name: 'Adam' }
-            ]
+            ],
+            timeout: 100
         },
         POST: {
             data: {
@@ -118,10 +121,12 @@ module.exports = {
                 data: {
                     success: true
                 },
-                code: 201
+                code: 201,
+                timeout: 1000
             },
             error: {
-                code: 405
+                code: 405,
+                timeout: 2000
             }
         }
     },
