@@ -33,7 +33,7 @@ gulp-rest-emulator
             .pipe(restEmulator(options));
     });
 
-    gulp.task('watch', [run], function () {
+    gulp.task('watch', ['run'], function () {
         gulp.watch('./mocks/**/*.js', ['run']);
     });
 
