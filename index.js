@@ -6,12 +6,14 @@ var _ = require('lodash');
 var serveStatic = require('serve-static');
 var path = require('path');
 var cors = require('cors');
+var server;
 
 exports = module.exports = gulpRestEmulator;
 
 function gulpRestEmulator(options) {
     var app = express();
     var config = [];
+    var restInstance;
 
     options = getNormalizeOptions(options);
 
@@ -19,11 +21,17 @@ function gulpRestEmulator(options) {
 
     function read(file) {
         var stream = this;
+
+        if (require.cache[file.path]) {
+            delete require.cache[file.path];
+        }
+
         try {
             config.push(require(file.path));
         } catch (error) {
             throw new gutil.PluginError('gulp-rest-emulator', 'Cannot read mock module ' + file.path);
         }
+
         return stream.emit('data', file);
     }
 
@@ -34,7 +42,12 @@ function gulpRestEmulator(options) {
             app.use(cors(options.corsOptions));
         }
 
-        app.use(restEmulator(config));
+        if (restInstance) {
+            restInstance.updateConfing(config);
+        } else {
+            restInstance = restEmulator(config, options.restOptions || {});
+            app.use(restInstance.middleware);
+        }
 
         _.each(options.root, serve);
 
@@ -48,7 +61,11 @@ function gulpRestEmulator(options) {
 
         stream.emit('end');
 
-        return app.listen(options.port);
+        if (!server) {
+            server = app.listen(options.port);
+        }
+
+        return server;
     }
 
     function serve(root) {

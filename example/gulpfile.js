@@ -11,3 +11,7 @@ gulp.task('run', function () {
     return gulp.src('./mocks/**/*.js')
         .pipe(restEmulator(options));
 });
+
+gulp.task('watch', ['run'], function () {
+    gulp.watch('./mocks/**/*.js', ['run']);
+});

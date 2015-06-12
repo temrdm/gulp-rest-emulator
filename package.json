@@ -1,6 +1,6 @@
 {
   "name": "gulp-rest-emulator",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "Gulp plugin use Rest Emulator",
   "main": "index.js",
   "scripts": {
@@ -21,13 +21,13 @@
   },
   "homepage": "https://github.com/temrdm/gulp-rest-emulator",
   "dependencies": {
-    "cors": "^2.6.0",
-    "event-stream": "^3.2.1",
+    "cors": "^2.7.1",
+    "event-stream": "^3.3.1",
     "express": "^4.10.7",
-    "gulp-util": "^3.0.2",
-    "lodash": "^2.4.1",
-    "rest-emulator": "0.0.4",
-    "serve-index": "^1.6.0",
-    "serve-static": "^1.8.0"
+    "gulp-util": "^3.0.5",
+    "lodash": "^3.9.3",
+    "rest-emulator": "^0.1.0",
+    "serve-index": "^1.6.4",
+    "serve-static": "^1.9.3"
   }
 }

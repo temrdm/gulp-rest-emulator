@@ -33,6 +33,10 @@ gulp-rest-emulator
             .pipe(restEmulator(options));
     });
 
+    gulp.task('watch', [run], function () {
+        gulp.watch('./mocks/**/*.js', ['run']);
+    });
+
 [CORS options available here.](https://github.com/troygoode/node-cors#configuration-options)
 
 # Mock

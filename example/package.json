@@ -8,6 +8,6 @@
   },
   "author": "temrdm",
   "dependencies": {
-    "gulp": "^3.8.10"
+    "gulp": "^3.9.0"
   }
 }
