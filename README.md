@@ -27,7 +27,8 @@ gulp-rest-emulator
             rewriteNotFound: false,
             rewriteTemplate: 'index.html',
             corsEnable: false, // Set true to enable CORS
-            corsOptions: {} // CORS options, default all origins
+            corsOptions: {}, // CORS options, default all origins
+            headers: {} // Set headers for all response, default blank
         };
         return gulp.src('./mocks/**/*.js')
             .pipe(restEmulator(options));
@@ -64,6 +65,7 @@ module.exports = {
             { name: 'John' },
             { name: 'Adam' }
         ],
+        headers: {}, // Headers for current preset, default blank
         code: 200, // Default value
         timeout: 0 // Default value in ms
     },
@@ -108,7 +110,10 @@ module.exports = {
                 data: [
                     { name: 'John' },
                     { name: 'Adam' }
-                ]
+                ],
+                headers: {
+                    XTag: 12345
+                }
             },
             blank: {
                 data: []
@@ -158,12 +163,18 @@ module.exports = {
                 { name: 'John' },
                 { name: 'Adam' }
             ],
+            headers: {
+                XTag: 12345
+            },
             query: {
                 // Usage: /api/users/?name=Adam
                 'name=Adam': {
                     data: [
                         { name: 'Adam' }
-                    ]
+                    ],
+                    headers: {
+                        XTag: 54321
+                    }
                 },
                 // Usage: /api/users/?name='John Doe'
                 'name=John Doe': {

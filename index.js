@@ -38,6 +38,13 @@ function gulpRestEmulator(options) {
     function end() {
         var stream = this;
 
+        if (_.keys(options.headers).length) {
+            app.use(function (req, res, next) {
+                res.set(options.headers);
+                next();
+            })
+        }
+
         if (options.corsEnable) {
             app.use(cors(options.corsOptions));
         }
@@ -80,7 +87,8 @@ function getNormalizeOptions(options) {
         rewriteNotFound: false,
         rewriteTemplate: 'index.html',
         corsEnable: false,
-        corsOptions: {}
+        corsOptions: {},
+        headers: {}
     };
 
     if (!_.isPlainObject(options)) {
