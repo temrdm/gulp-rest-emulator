@@ -1,6 +1,6 @@
 {
   "name": "gulp-rest-emulator",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Gulp plugin use Rest Emulator",
   "main": "index.js",
   "scripts": {
