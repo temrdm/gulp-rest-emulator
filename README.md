@@ -7,10 +7,10 @@ gulp-rest-emulator
 
     npm install --save gulp-rest-emulator
 
-# Plugins
+# Links
 
-* [REST emulator](https://github.com/temrdm/rest-emulator)
-* [Angular module](https://github.com/temrdm/ng-rest-emulator)
+* [Standalone node server](https://github.com/Pouja/node-rest-emulator)
+* [Middleware](https://github.com/temrdm/rest-emulator)
 
 # Usage
 
