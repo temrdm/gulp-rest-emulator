@@ -1,6 +1,7 @@
 var es = require('event-stream');
 var restEmulator = require('rest-emulator');
 var express = require('express');
+var https = require('https');
 var gutil = require('gulp-util');
 var _ = require('lodash');
 var serveStatic = require('serve-static');
@@ -69,7 +70,7 @@ function gulpRestEmulator(options) {
         stream.emit('end');
 
         if (!server) {
-            server = app.listen(options.port);
+            server = (options.httpsEnable ? https.createServer(options.httpsOptions, app).listen(options.port) : app.listen(options.port));
         }
 
         return server;
@@ -88,7 +89,9 @@ function getNormalizeOptions(options) {
         rewriteTemplate: 'index.html',
         corsEnable: false,
         corsOptions: {},
-        headers: {}
+        headers: {},
+        httpsEnable: false,
+        httpsOptions: {}
     };
 
     if (!_.isPlainObject(options)) {
