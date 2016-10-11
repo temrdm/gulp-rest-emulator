@@ -28,7 +28,9 @@ gulp-rest-emulator
             rewriteTemplate: 'index.html',
             corsEnable: false, // Set true to enable CORS
             corsOptions: {}, // CORS options, default all origins
-            headers: {} // Set headers for all response, default blank
+            headers: {}, // Set headers for all response, default blank
+            httpsEnable: false, // Set true to enable HTTPS
+            httpsOptions: {} // HTTPS options
         };
         return gulp.src('./mocks/**/*.js')
             .pipe(restEmulator(options));
@@ -38,7 +40,8 @@ gulp-rest-emulator
         gulp.watch('./mocks/**/*.js', ['run']);
     });
 
-[CORS options available here.](https://github.com/troygoode/node-cors#configuration-options)
+* [CORS options available here.](https://github.com/troygoode/node-cors#configuration-options)
+* [HTTPS options available here.](https://nodejs.org/api/tls.html#tls_tls_createserver_options_secureconnectionlistener)
 
 # Mock
 
