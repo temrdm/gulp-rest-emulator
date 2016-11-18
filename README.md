@@ -3,6 +3,8 @@ gulp-rest-emulator
 
 [![Join the chat at https://gitter.im/temrdm/gulp-rest-emulator](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/temrdm/gulp-rest-emulator?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
+[![NPM](https://nodei.co/npm/gulp-rest-emulator.png?downloads=true&downloadRank=true)](https://nodei.co/npm/gulp-rest-emulator/)
+
 # Installation
 
     npm install --save gulp-rest-emulator
